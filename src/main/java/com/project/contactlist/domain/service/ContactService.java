@@ -50,9 +50,9 @@ public class ContactService {
 
     public Contact create(Contact contact, MultipartFile file) {
 
-        if (file != null) {
-            contact.setPhoto(uploadPhotoService.uploadPhoto(file));
-        }
+//        if (file != null) {
+//            contact.setPhoto(uploadPhotoService.uploadPhoto(file));
+//        }
 
         return contactRepository.save(contact);
     }
@@ -68,12 +68,12 @@ public class ContactService {
     public Contact update(Contact contact, Long id, MultipartFile file) {
         Contact contactSave = findById(id);
 
-        if (!StringUtils.isEmpty(contactSave.getPhoto()) || contactSave.getPhoto() != null) {
-            uploadPhotoService.removePhoto(file, contactSave.getPhoto());
-            contact.setPhoto(uploadPhotoService.uploadPhoto(file));
-        } else {
-            contact.setPhoto(uploadPhotoService.uploadPhoto(file));
-        }
+//        if (!StringUtils.isEmpty(contactSave.getPhoto()) || contactSave.getPhoto() != null) {
+//            uploadPhotoService.removePhoto(file, contactSave.getPhoto());
+//            contact.setPhoto(uploadPhotoService.uploadPhoto(file));
+//        } else {
+//            contact.setPhoto(uploadPhotoService.uploadPhoto(file));
+//        }
 
         BeanUtils.copyProperties(contact, contactSave, "id");
 

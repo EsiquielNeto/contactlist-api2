@@ -1,7 +1,6 @@
 package com.project.contactlist.repository.contact;
 
 import com.project.contactlist.domain.model.Contact;
-import com.project.contactlist.domain.model.QContact;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
